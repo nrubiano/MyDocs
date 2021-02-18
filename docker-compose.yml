@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+  mydocs.database:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=mydocs
+      - POSTGRES_USER=mydocs
+      - POSTGRES_PASSWORD=h2E@93%5b!fVX*e=
+  mydocs.infrastructure.db.migrations:
+    image: ${DOCKER_REGISTRY-}mydocsinfrastructuredbmigrations
+    build:
+      context: .
+      dockerfile: MyDocs.Infrasturcture.Db.Migrations/Dockerfile
+    restart: on-failure
+    depends_on:
+      - mydocs.database
+  mydocs.hosts.backend:
+    image: ${DOCKER_REGISTRY-}mydocshostsbackend
+    build:
+      context: .
+      dockerfile: MyDocs.Hosts.Backend/Dockerfile
+    restart: on-failure
+    depends_on:
+      - mydocs.infrastructure.db.migrations
+      - mydocs.database
+
