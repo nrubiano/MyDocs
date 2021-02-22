@@ -7,6 +7,32 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Scripts\0001-Create-Users-Table.sql" />
+    <None Remove="Scripts\0002-Create-Categories-Table.sql" />
+    <None Remove="Scripts\0003-Create-Groups-Table.sql" />
+    <None Remove="Scripts\0004-Create-Roles-Table.sql" />
+    <None Remove="Scripts\0005-Create-Documents-Table.sql" />
+    <None Remove="Scripts\0006-Create-GroupUsers-Table.sql" />
+    <None Remove="Scripts\0007-Create-DocumentUsers-Table.sql" />
+    <None Remove="Scripts\0008-Create-DocumentGroups-Table.sql" />
+    <None Remove="Scripts\0009-Create-ForeignKeys-Table.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\0009-Create-ForeignKeys-Table.sql" />
+    <EmbeddedResource Include="Scripts\0008-Create-DocumentGroups-Table.sql" />
+    <EmbeddedResource Include="Scripts\0007-Create-DocumentUsers-Table.sql" />
+    <EmbeddedResource Include="Scripts\0006-Create-GroupUsers-Table.sql" />
+    <EmbeddedResource Include="Scripts\0005-Create-Documents-Table.sql" />
+    <EmbeddedResource Include="Scripts\0004-Create-Roles-Table.sql" />
+    <EmbeddedResource Include="Scripts\0003-Create-Groups-Table.sql" />
+    <EmbeddedResource Include="Scripts\0002-Create-Categories-Table.sql" />
+    <EmbeddedResource Include="Scripts\0001-Create-Users-Table.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="dbup" Version="4.5.0" />
+    <PackageReference Include="dbup-postgresql" Version="4.5.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
   </ItemGroup>
 
