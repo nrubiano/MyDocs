@@ -13,17 +13,17 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A2F36405-C002-49F3-AD72-EA4B2BE480A6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDocs.Application", "..\MyDocs.Application\MyDocs.Application.csproj", "{76E4EA4A-DCFB-4B43-8320-8E6FEF4CE31D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDocs.Application", "MyDocs.Application\MyDocs.Application.csproj", "{76E4EA4A-DCFB-4B43-8320-8E6FEF4CE31D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDocs.Domain", "..\MyDocs.Domain\MyDocs.Domain.csproj", "{6759F0AD-2C7D-49CB-8B35-5AB02B5BD8C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDocs.Domain", "MyDocs.Domain\MyDocs.Domain.csproj", "{6759F0AD-2C7D-49CB-8B35-5AB02B5BD8C3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDocs.Infrastructure", "..\MyDocs.Infrastructure\MyDocs.Infrastructure.csproj", "{E962447F-D819-4CA1-B62F-D3BF6C7F4CB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDocs.Infrastructure", "MyDocs.Infrastructure\MyDocs.Infrastructure.csproj", "{E962447F-D819-4CA1-B62F-D3BF6C7F4CB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDocs.Application.Tests", "..\MyDocs.Application.Tests\MyDocs.Application.Tests.csproj", "{537F7394-A2D6-4F7F-B22C-83770612FB70}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDocs.Application.Tests", "MyDocs.Application.Tests\MyDocs.Application.Tests.csproj", "{537F7394-A2D6-4F7F-B22C-83770612FB70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDocs.Domain.Tests", "..\MyDocs.Domain.Tests\MyDocs.Domain.Tests.csproj", "{43B1F78F-1951-4733-BE08-2FBEBDEAB661}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDocs.Domain.Tests", "MyDocs.Domain.Tests\MyDocs.Domain.Tests.csproj", "{43B1F78F-1951-4733-BE08-2FBEBDEAB661}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDocs.Application.IntegrationTests", "..\MyDocs.Application.IntegrationTests\MyDocs.Application.IntegrationTests.csproj", "{F1D145FD-1D45-4F4F-9A4C-ED470726057D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDocs.Application.IntegrationTests", "MyDocs.Application.IntegrationTests\MyDocs.Application.IntegrationTests.csproj", "{F1D145FD-1D45-4F4F-9A4C-ED470726057D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
