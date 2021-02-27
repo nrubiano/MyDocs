@@ -4,19 +4,35 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
+using MyDocs.Application.Common.Dtos;
+using MyDocs.Application.Common.Persistence;
+using MyDocs.Domain.Entities;
 
 namespace MyDocs.Application.Groups.Commands.CreateGroup
 {
     public class CreateGroupCommand : IRequest<int>
     {
-
+        public string Name { get; set; }
     }
 
     public class CreateGroupCommandHandler : IRequestHandler<CreateGroupCommand, int>
     {
-        public Task<int> Handle(CreateGroupCommand request, CancellationToken cancellationToken)
+        private readonly IGroupRepository _groupRepository;
+
+        public CreateGroupCommandHandler(IGroupRepository groupRepository)
         {
-            throw new NotImplementedException();
+            _groupRepository = groupRepository;
+        }
+        
+        public async Task<int> Handle(CreateGroupCommand request, CancellationToken cancellationToken)
+        {
+            var group = new Group
+            {
+                Name = request.Name,
+                CreatedOn = DateTime.Now
+            };
+
+            return await _groupRepository.AddAsync(group);
         }
     }
 }

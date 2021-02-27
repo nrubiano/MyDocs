@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using MyDocs.Application;
+using MyDocs.Infrastructure;
 
 namespace MyDocs.Hosts.Backend
 {
@@ -21,6 +22,7 @@ namespace MyDocs.Hosts.Backend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddApplication();
+            services.AddInfrastructure();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

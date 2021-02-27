@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
+using MyDocs.Application.Common.Persistence;
 using MyDocs.Domain.Entities;
 
 namespace MyDocs.Infrastructure.Persistence.Repositories
 {
     internal class DocumentRepository : BaseRepository, IDocumentRepository
     {
-        public DocumentRepository(IDbTransaction transaction) : base(transaction)
+        public DocumentRepository(IDbConnection connection) : base(connection)
         {
         }
 
-        public Task AddAsync(Document entity)
+        public Task<int> AddAsync(Document entity)
         {
             throw new NotImplementedException();
         }

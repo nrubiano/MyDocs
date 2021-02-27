@@ -4,12 +4,11 @@ namespace MyDocs.Infrastructure.Persistence.Repositories
 {
     public abstract class BaseRepository
     {
-        protected IDbTransaction Transaction { get; private set; }
-        protected IDbConnection Connection => Transaction.Connection;
-
-        protected BaseRepository(IDbTransaction transaction)
+        protected readonly IDbConnection Connection;
+    
+        protected BaseRepository(IDbConnection connection)
         {
-            Transaction = transaction;
+            Connection = connection;
         }
     }
 }

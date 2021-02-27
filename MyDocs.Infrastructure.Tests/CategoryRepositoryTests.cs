@@ -15,24 +15,17 @@ namespace MyDocs.Infrastructure.Tests
         {
             var mockConnection = new Mock<IDbConnection>();
             
-            var mockTransaction = new Mock<IDbTransaction>();
-            mockTransaction
-                .Setup(x => x.Connection)
-                .Returns(mockConnection.Object);
-
             mockConnection
-                .SetupDapperAsync(x => x.ExecuteScalarAsync<int>(It.IsAny<string>(), null, mockTransaction.Object, null, null))
+                .SetupDapperAsync(x => x.ExecuteScalarAsync<int>(It.IsAny<string>(), null, null, null, null))
                 .ReturnsAsync(1);
 
-            var repository = new CategoryRepository(mockTransaction.Object);
+            var repository = new CategoryRepository(mockConnection.Object);
 
             await repository.AddAsync(new Category
             {
                 Id = 1,
                 Name = "Category"
             });
-
-            mockTransaction.Object.Commit();
         }
     }
 }

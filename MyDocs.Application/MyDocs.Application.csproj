@@ -19,4 +19,8 @@
     <Folder Include="Users\Commands\UpdateUser\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MyDocs.Domain\MyDocs.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

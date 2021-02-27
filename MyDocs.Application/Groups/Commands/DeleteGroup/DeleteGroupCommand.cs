@@ -2,19 +2,29 @@
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
+using MyDocs.Application.Common.Persistence;
 
 namespace MyDocs.Application.Groups.Commands.DeleteGroup
 {
-    public class DeleteGroupCommand : IRequest<int>
+    public class DeleteGroupCommand : IRequest
     {
-
+        public int GroupId { get; set; }
     }
 
-    public class DeleteGroupCommandHandler : IRequestHandler<DeleteGroupCommand, int>
+    public class DeleteGroupCommandHandler : IRequestHandler<DeleteGroupCommand>
     {
-        public Task<int> Handle(DeleteGroupCommand request, CancellationToken cancellationToken)
+        private readonly IGroupRepository _groupRepository;
+
+        public DeleteGroupCommandHandler(IGroupRepository groupRepository)
         {
-            throw new NotImplementedException();
+            _groupRepository = groupRepository;
+        }
+
+        public async Task<Unit> Handle(DeleteGroupCommand request, CancellationToken cancellationToken)
+        {
+            await _groupRepository.RemoveAsync(request.GroupId);
+
+            return Unit.Value;
         }
     }
 }

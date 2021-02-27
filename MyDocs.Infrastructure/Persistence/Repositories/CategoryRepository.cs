@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
 using Dapper;
+using MyDocs.Application.Common.Persistence;
 using MyDocs.Domain.Entities;
 
 namespace MyDocs.Infrastructure.Persistence.Repositories
 {
     public class CategoryRepository : BaseRepository, ICategoryRepository
     {
-        public CategoryRepository(IDbTransaction transaction) : base(transaction)
+        public CategoryRepository(IDbConnection connection) : base(connection)
         {
         }
 
-        public async Task AddAsync(Category entity)
+        public Task<int> AddAsync(Category entity)
         {
-            await Connection
-                .ExecuteReaderAsync("SELECT * FROM users");
+            throw new NotImplementedException();
         }
 
         public IEnumerable<Category> AllAsync()
