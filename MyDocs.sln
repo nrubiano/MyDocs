@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDocs.Domain.Tests", "MyDo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDocs.Application.IntegrationTests", "MyDocs.Application.IntegrationTests\MyDocs.Application.IntegrationTests.csproj", "{F1D145FD-1D45-4F4F-9A4C-ED470726057D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDocs.Infrastructure.Tests", "..\MyDocs.Infrastructure.Tests\MyDocs.Infrastructure.Tests.csproj", "{C1C48F7B-B7FC-4496-9037-E386073C0C8E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDocs.Infrastructure.Tests", "MyDocs.Infrastructure.Tests\MyDocs.Infrastructure.Tests.csproj", "{C1C48F7B-B7FC-4496-9037-E386073C0C8E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
