@@ -8,7 +8,7 @@ namespace MyDocs.Domain.Tests
         [Fact]
         public void Test1()
         {
-
+            
         }
     }
 }

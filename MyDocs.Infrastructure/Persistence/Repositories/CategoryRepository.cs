@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
+using Dapper;
 using MyDocs.Domain.Entities;
 
 namespace MyDocs.Infrastructure.Persistence.Repositories
@@ -12,9 +13,10 @@ namespace MyDocs.Infrastructure.Persistence.Repositories
         {
         }
 
-        public Task AddAsync(Category entity)
+        public async Task AddAsync(Category entity)
         {
-            throw new NotImplementedException();
+            await Connection
+                .ExecuteReaderAsync("SELECT * FROM users");
         }
 
         public IEnumerable<Category> AllAsync()
