@@ -1,15 +1,13 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using MyDocs.Application.Groups.Commands.CreateGroup;
 
 namespace MyDocs.Hosts.Backend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class GroupsController : ControllerBase
+    public class GroupsController : BaseController
     {
         [HttpGet]
         public Task<IActionResult> Get()
@@ -18,9 +16,11 @@ namespace MyDocs.Hosts.Backend.Controllers
         }
 
         [HttpPost]
-        public Task<IActionResult> Post()
+        public async Task<IActionResult> Post(CreateGroupCommand command)
         {
-            throw new NotImplementedException();
+            await Mediator.Send(command);
+
+            return Ok();
         }
 
         [HttpPut]

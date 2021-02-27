@@ -22,6 +22,9 @@ services:
     build:
       context: .
       dockerfile: MyDocs.Hosts.Backend/Dockerfile
+    ports:
+      - 5000:80
+      - 5001:443
     restart: on-failure
     depends_on:
       - mydocs.infrastructure.db.migrations

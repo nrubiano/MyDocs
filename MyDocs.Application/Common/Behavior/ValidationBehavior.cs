@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using FluentValidation;
 using MediatR;
+using ValidationException = MyDocs.Application.Common.Exceptions.ValidationException;
 
 namespace MyDocs.Application.Common.Behavior
 {

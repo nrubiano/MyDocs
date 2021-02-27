@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using MyDocs.Application;
+using MyDocs.Hosts.Backend.Filters;
 using MyDocs.Infrastructure;
 
 namespace MyDocs.Hosts.Backend
@@ -23,7 +24,8 @@ namespace MyDocs.Hosts.Backend
         {
             services.AddApplication();
             services.AddInfrastructure();
-            services.AddControllers();
+            services.AddControllers(options =>
+                options.Filters.Add(new ApiExceptionFilter()));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "MyDocs.Hosts.Backend", Version = "v1"});
