@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using FluentAssertions;
+﻿using FluentAssertions;
 using FluentValidation;
 using MyDocs.Application.Groups.Commands.CreateGroup;
 using Xunit;
