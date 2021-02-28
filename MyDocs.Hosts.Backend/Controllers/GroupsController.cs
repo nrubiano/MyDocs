@@ -18,9 +18,9 @@ namespace MyDocs.Hosts.Backend.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(CreateGroupCommand command)
         {
-            await Mediator.Send(command);
+            var groupId = await Mediator.Send(command);
 
-            return Ok();
+            return Created($"/groups/{groupId}", groupId);
         }
 
         [HttpPut]

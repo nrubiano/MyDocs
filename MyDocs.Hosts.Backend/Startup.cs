@@ -23,7 +23,7 @@ namespace MyDocs.Hosts.Backend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddApplication();
-            services.AddInfrastructure();
+            services.AddInfrastructure(Configuration.GetConnectionString("Default"));
             services.AddControllers(options =>
                 options.Filters.Add(new ApiExceptionFilter()));
             services.AddSwaggerGen(c =>

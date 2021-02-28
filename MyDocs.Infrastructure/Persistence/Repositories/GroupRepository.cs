@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
+using Dapper;
 using MyDocs.Application.Common.Persistence;
 using MyDocs.Domain.Entities;
 
@@ -13,9 +14,13 @@ namespace MyDocs.Infrastructure.Persistence.Repositories
         {
         }
 
-        public Task<int> AddAsync(Group entity)
+        public async Task<int> AddAsync(Group entity)
         {
-            throw new NotImplementedException();
+            var values = new DynamicParameters();
+
+            values.Add("name", entity.Name);
+
+            return await Connection.QueryFirstOrDefaultAsync<int>("public.groups_insert", values, commandType: CommandType.StoredProcedure);
         }
 
         public IEnumerable<Group> AllAsync()

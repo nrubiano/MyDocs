@@ -1,4 +1,6 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
+using MyDocs.Application.Common.Dtos;
 using MyDocs.Application.IntegrationTests.Models;
 using MyDocs.Application.IntegrationTests.Extensions;
 using RestSharp;
@@ -30,7 +32,22 @@ namespace MyDocs.Application.IntegrationTests
         [Fact]
         public void Should_Create_New_Group()
         {
+            var model = new GroupDto
+            {
+                Name = $"My Group {Guid.NewGuid()}"
+            };
+
+            var request = new RestRequest("groups", DataFormat.Json)
+                .AddJsonBody(model);
             
+            var response = HttpClient.Post(request);
+
+            if (!response.IsSuccessful)
+            {
+                throw new Exception("The request was not a success.");
+            }
+
+            Assert.Equal(HttpStatusCode.Created, response.StatusCode);
         }
     }
 }

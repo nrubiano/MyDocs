@@ -28,8 +28,7 @@ namespace MyDocs.Application.Groups.Commands.CreateGroup
         {
             var group = new Group
             {
-                Name = request.Name,
-                CreatedOn = DateTime.Now
+                Name = request.Name
             };
 
             return await _groupRepository.AddAsync(group);

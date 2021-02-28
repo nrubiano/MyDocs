@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -16,9 +16,11 @@
     <None Remove="Scripts\0007-Create-DocumentUsers-Table.sql" />
     <None Remove="Scripts\0008-Create-DocumentGroups-Table.sql" />
     <None Remove="Scripts\0009-Create-ForeignKeys-Table.sql" />
+    <None Remove="Scripts\0010-Create-SP-Groups-Insert.sql" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Scripts\0010-Create-SP-Groups-Insert.sql" />
     <EmbeddedResource Include="Scripts\0009-Create-ForeignKeys-Table.sql" />
     <EmbeddedResource Include="Scripts\0008-Create-DocumentGroups-Table.sql" />
     <EmbeddedResource Include="Scripts\0007-Create-DocumentUsers-Table.sql" />
