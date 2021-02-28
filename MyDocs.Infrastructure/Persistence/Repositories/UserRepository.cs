@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
+using Dapper;
 using MyDocs.Application.Common.Persistence;
 using MyDocs.Domain.Entities;
 
@@ -46,6 +47,15 @@ namespace MyDocs.Infrastructure.Persistence.Repositories
         public Task UpdateAsync(User entity)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<User> FindByUsernameAsync(string userName)
+        {
+            var values = new DynamicParameters();
+
+            values.Add("username", userName);
+
+            return await Connection.QueryFirstOrDefaultAsync<User>("public.users_findByUsername", values, commandType: CommandType.StoredProcedure);
         }
     }
 }
