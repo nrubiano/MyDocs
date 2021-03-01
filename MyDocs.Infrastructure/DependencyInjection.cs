@@ -19,6 +19,7 @@ namespace MyDocs.Infrastructure
 
             services.AddTransient<IDbConnection>(x => new NpgsqlConnection(connectionString));
             services.AddTransient(typeof(IGroupRepository), typeof(GroupRepository));
+            services.AddTransient(typeof(IUserRepository), typeof(UserRepository));
 
             return services;
         }
