@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MyDocs\MyDocs.Hosts.Backend\MyDocs.Hosts.Backend.csproj" />
+    <ProjectReference Include="..\MyDocs.Hosts.Backend\MyDocs.Hosts.Backend.csproj" />
   </ItemGroup>
 
 </Project>
